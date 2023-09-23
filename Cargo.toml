@@ -1,0 +1,17 @@
+[package]
+name = "wgpu-gen4ids"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+bytemuck = "1.14.0"
+console_error_panic_hook = "0.1.7"
+console_log = "1.0.0"
+futures-intrusive = "0.5.0"
+log = "0.4.20"
+wasm-bindgen = "0.2.87"
+wasm-bindgen-futures = "0.4.37"
+wgpu = "0.17.0"
