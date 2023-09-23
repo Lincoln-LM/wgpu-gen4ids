@@ -34,12 +34,13 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/download-artifact@v3
+      - run: zip -r wgpu-gen4ids.zip ./package/
       - uses: pyTooling/Actions/releaser@main
         with:
           tag: latest
           rm: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          files: /home/runner/work/wgpu-gen4ids/wgpu-gen4ids/package/*
+          files: /home/runner/work/wgpu-gen4ids/wgpu-gen4ids/wgpu-gen4ids.zip
       - name: Summary
         run: |
           cat <<EOF >> $GITHUB_STEP_SUMMARY
